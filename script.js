@@ -1,5 +1,6 @@
 const body = document.body;
 const navToggle = document.querySelector('.nav-toggle');
+const primaryNav = document.querySelector('.primary-nav');
 const navLinks = document.querySelectorAll('.primary-nav a');
 const sections = document.querySelectorAll('main section[id]');
 const backToTop = document.querySelector('.back-to-top');
@@ -7,8 +8,6 @@ const year = document.getElementById('year');
 const form = document.getElementById('quote-form');
 const formNote = document.getElementById('form-note');
 const revealElements = document.querySelectorAll('.reveal');
-const trustItems = document.querySelectorAll('.trust-item');
-const interestButtons = document.querySelectorAll('[data-interest]');
 
 const closeNav = () => {
   body.classList.remove('nav-open');
@@ -69,27 +68,6 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach((element) => revealObserver.observe(element));
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const rotateTrustItems = () => {
-  if (trustItems.length === 0) return;
-  trustItems.forEach((item) => item.classList.remove('is-active'));
-  trustItems[trustIndex].classList.add('is-active');
-  trustIndex = (trustIndex + 1) % trustItems.length;
-};
-
-let trustIndex = 0;
-rotateTrustItems();
-setInterval(rotateTrustItems, 3500);
-
-interestButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const interest = button.getAttribute('data-interest');
-    const select = form.querySelector('[name="interest"]');
-    if (select && interest) {
-      select.value = interest;
-    }
-  });
-});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

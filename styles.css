@@ -8,9 +8,6 @@
   --color-primary: #1f4b86;
   --color-primary-dark: #15355f;
   --color-accent: #f5b740;
-  --color-accent-soft: rgba(245, 183, 64, 0.18);
-  --color-sky: #e9f1ff;
-  --color-mint: #e7f6f2;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -249,7 +246,6 @@ p {
 
 .hero {
   padding-top: var(--space-3xl);
-  background: linear-gradient(180deg, var(--color-sky), rgba(246, 248, 251, 0));
 }
 
 .hero-grid {
@@ -326,18 +322,6 @@ p {
   opacity: 0.2;
 }
 
-.hero-image {
-  position: absolute;
-  width: 78%;
-  height: 70%;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  border: 6px solid rgba(255, 255, 255, 0.85);
-  mix-blend-mode: multiply;
-  opacity: 0.85;
-}
-
 .trust-bar {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
@@ -354,15 +338,6 @@ p {
 
 .trust-item {
   font-weight: 600;
-  color: var(--color-primary-dark);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 999px;
-  background: transparent;
-  transition: var(--transition);
-}
-
-.trust-item.is-active {
-  background: var(--color-accent-soft);
   color: var(--color-primary-dark);
 }
 
@@ -383,33 +358,6 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(140deg, rgba(31, 75, 134, 0.08), transparent);
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.card:hover::after {
-  opacity: 1;
-}
-
-.card-media {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--space-md);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
 .card ul {
   padding-left: 1.1rem;
   margin: 0 0 var(--space-md);
@@ -420,10 +368,6 @@ p {
   display: grid;
   gap: var(--space-md);
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.industry-card {
-  background: linear-gradient(140deg, rgba(31, 75, 134, 0.08), rgba(231, 246, 242, 0.7));
 }
 
 .feature-card .icon {
@@ -521,10 +465,6 @@ textarea {
 
 .form-note.error {
   color: #b42318;
-}
-
-.form-card {
-  background: linear-gradient(160deg, #ffffff 40%, var(--color-mint));
 }
 
 .site-footer {
